@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\EndgameBody.cs" />
+     <Compile Include="Assets\Scripts\EndgameGhost.cs" />
      <Compile Include="Assets\Scripts\EndgameObject.cs" />
      <Compile Include="Assets\Scripts\GameControler.cs" />
      <Compile Include="Assets\Scripts\LoadOnClick.cs" />

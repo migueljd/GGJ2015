@@ -38,7 +38,7 @@ public class GameControler : MonoBehaviour {
 	private void _GameOver(string winnerName){
 
 		instance.canvas.enabled = true;
-		Time.timeScale = 2;
+		Time.timeScale = 0;
 		Debug.Log(winnerName + " wins");
 		//Execute Body victory
 		if(winnerName == "Body"){
