@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
@@ -24,7 +23,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-										GlobalSection(MonoDevelopProperties) = preSolution
+												GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
@@ -41,34 +40,6 @@ Global
 		$3.inheritsSet = Mono
 		$3.inheritsScope = text/plain
 		$3.scope = text/plain
-	EndGlobalSection
-
-EndGlobal
-=======
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2008
-
-Project("{F9113509-57C5-9C44-2BE1-58AAAD17832B}") = "GGJ2015", "Assembly-CSharp.csproj", "{54DEFE9A-4DE0-481D-B4A9-8C42241AC4CB}"
-EndProject
-Project("{F9113509-57C5-9C44-2BE1-58AAAD17832B}") = "GGJ2015", "Assembly-UnityScript-firstpass.unityproj", "{A3D03A8F-5F97-9D22-C79D-7FE3E910B0FF}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{54DEFE9A-4DE0-481D-B4A9-8C42241AC4CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{54DEFE9A-4DE0-481D-B4A9-8C42241AC4CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{54DEFE9A-4DE0-481D-B4A9-8C42241AC4CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{54DEFE9A-4DE0-481D-B4A9-8C42241AC4CB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A3D03A8F-5F97-9D22-C79D-7FE3E910B0FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A3D03A8F-5F97-9D22-C79D-7FE3E910B0FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A3D03A8F-5F97-9D22-C79D-7FE3E910B0FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A3D03A8F-5F97-9D22-C79D-7FE3E910B0FF}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 										GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
@@ -90,4 +61,3 @@ Global
 	EndGlobalSection
 
 EndGlobal
->>>>>>> ghost and body movement

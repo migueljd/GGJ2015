@@ -10,6 +10,7 @@ public class PlayerMovementController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
 		if (this.name == "Ghost")
 			doMovementGhost ();
 		if (this.name == "Body")
@@ -28,7 +29,12 @@ public class PlayerMovementController : MonoBehaviour {
 			z = this.moveSpeed;
 		if (Input.GetKey (KeyCode.S))
 			z = -this.moveSpeed;
-		this.transform.Translate(new Vector3(x,y,z) *Time.deltaTime);
+
+//		Vector3 direction = new Vector3(x,y,z) *Time.deltaTime;
+//		Vector3 pos = this.transform.position;
+//		if(Physics.Raycast(this.transform.position, direction, Vector3.Distance(direction, pos)))		
+			this.transform.Translate(new Vector3(x,y,z) *Time.deltaTime);
+        
 	}
 
 	private void doMovementGhost(){
@@ -43,6 +49,8 @@ public class PlayerMovementController : MonoBehaviour {
 			z = this.moveSpeed;
 		if (Input.GetKey (KeyCode.DownArrow))
 			z = -this.moveSpeed;
+
+
 		this.transform.Translate(new Vector3(x,y,z) *Time.deltaTime);
 	}
 }

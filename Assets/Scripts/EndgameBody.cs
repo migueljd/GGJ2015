@@ -32,6 +32,7 @@ public class EndgameBody : MonoBehaviour {
 				GameControler.GameOver(this.name);
 			}
 			else{
+				Debug.Log ("Spawning new object");
 				SpawnNewWinObject();
 			}
 		}
