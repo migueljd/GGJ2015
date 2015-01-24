@@ -1,0 +1,20 @@
+# This file uses centimeters as units for non-parametric coordinates.
+
+mtllib Matress.mtl
+g default
+v -3.253139 0.173490 0.921997
+v 3.813213 0.173490 0.921997
+v -3.253139 0.173490 -3.909128
+v 3.813213 0.173490 -3.909128
+vt 0.000000 0.000000
+vt 1.000000 0.000000
+vt 0.000000 1.000000
+vt 1.000000 1.000000
+vn 0.000000 1.000000 0.000000
+vn 0.000000 1.000000 0.000000
+vn 0.000000 1.000000 0.000000
+vn 0.000000 1.000000 0.000000
+s off
+g pasted__pPlane1 group
+usemtl pasted__blinn5SG
+f 1/1/1 2/2/2 4/4/3 3/3/4
