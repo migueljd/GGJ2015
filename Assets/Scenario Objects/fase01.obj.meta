@@ -1,0 +1,142 @@
+fileFormatVersion: 2
+guid: c2add5d5eb04e2242a6dcacd5ff4350f
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: chair_pCube1
+    100002: chair_pCube2
+    100004: chair_pCube3
+    100006: //RootNode
+    100008: Ground_polySurface2
+    100010: lamp_0002_pCylinder2
+    100012: lamp_0002_pCylinder3
+    100014: lamp_0002_pCylinder4
+    100016: pCube13
+    100018: pCube22
+    100020: pCube52
+    100022: pCube53
+    100024: pCube55
+    100026: pCube56
+    100028: polySurface1_Ground
+    100030: pPlane1
+    100032: table_0002_pCube5
+    400000: chair_pCube1
+    400002: chair_pCube2
+    400004: chair_pCube3
+    400006: //RootNode
+    400008: Ground_polySurface2
+    400010: lamp_0002_pCylinder2
+    400012: lamp_0002_pCylinder3
+    400014: lamp_0002_pCylinder4
+    400016: pCube13
+    400018: pCube22
+    400020: pCube52
+    400022: pCube53
+    400024: pCube55
+    400026: pCube56
+    400028: polySurface1_Ground
+    400030: pPlane1
+    400032: table_0002_pCube5
+    2300000: chair_pCube1
+    2300002: chair_pCube2
+    2300004: chair_pCube3
+    2300006: Ground_polySurface2
+    2300008: lamp_0002_pCylinder2
+    2300010: lamp_0002_pCylinder3
+    2300012: lamp_0002_pCylinder4
+    2300014: pCube13
+    2300016: pCube22
+    2300018: pCube52
+    2300020: pCube53
+    2300022: pCube55
+    2300024: pCube56
+    2300026: polySurface1_Ground
+    2300028: pPlane1
+    2300030: table_0002_pCube5
+    3300000: chair_pCube1
+    3300002: chair_pCube2
+    3300004: chair_pCube3
+    3300006: Ground_polySurface2
+    3300008: lamp_0002_pCylinder2
+    3300010: lamp_0002_pCylinder3
+    3300012: lamp_0002_pCylinder4
+    3300014: pCube13
+    3300016: pCube22
+    3300018: pCube52
+    3300020: pCube53
+    3300022: pCube55
+    3300024: pCube56
+    3300026: polySurface1_Ground
+    3300028: pPlane1
+    3300030: table_0002_pCube5
+    4300000: chair_pCube1
+    4300002: chair_pCube2
+    4300004: chair_pCube3
+    4300006: Ground_polySurface2
+    4300008: lamp_0002_pCylinder2
+    4300010: lamp_0002_pCylinder3
+    4300012: lamp_0002_pCylinder4
+    4300014: pCube13
+    4300016: pCube22
+    4300018: pCube52
+    4300020: pCube53
+    4300022: pCube55
+    4300024: pCube56
+    4300026: polySurface1_Ground
+    4300028: pPlane1
+    4300030: table_0002_pCube5
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
