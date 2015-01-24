@@ -2,10 +2,15 @@
 using System.Collections;
 
 public class PlayerMovementController : MonoBehaviour {
-	public float moveSpeed = 2f;
+	public float bodyMoveSpeed = 2f;
+	public float ghostMoveSpeed = 2f;
+	public float movementLostOnSlow = 0.5f;
+	float slowTime;
+	bool isSlow;
 	// Use this for initialization
 	void Start () {
-		
+		slowTime = 0;
+		isSlow = false;
 	}
 	
 	// Update is called once per frame
@@ -13,8 +18,17 @@ public class PlayerMovementController : MonoBehaviour {
 
 		if (this.name == "Ghost")
 			doMovementGhost ();
-		if (this.name == "Body")
+		if (this.name == "Body") {
+			if (isSlow ==true) { 
+				timer();
+				if(slowTime <= 0.0f){
+					bodyMoveSpeed = bodyMoveSpeed / movementLostOnSlow;
+					isSlow = false;
+					Debug.Log ("fast - " + bodyMoveSpeed);
+				}
+			}		
 			doMovementBody (); 
+		}
 	}
 
 	private void doMovementBody(){
@@ -22,19 +36,18 @@ public class PlayerMovementController : MonoBehaviour {
 		float y = 0.0f;
 		float z = 0.0f;
 		if(Input.GetKey(KeyCode.A))
-			x = -this.moveSpeed;
+			x = -this.bodyMoveSpeed;
 		if (Input.GetKey (KeyCode.D))
-			x = this.moveSpeed;
+			x = this.bodyMoveSpeed;
 		if(Input.GetKey (KeyCode.W))
-			z = this.moveSpeed;
+			z = this.bodyMoveSpeed;
 		if (Input.GetKey (KeyCode.S))
-			z = -this.moveSpeed;
+			z = -this.bodyMoveSpeed;
 
 //		Vector3 direction = new Vector3(x,y,z) *Time.deltaTime;
 //		Vector3 pos = this.transform.position;
 //		if(Physics.Raycast(this.transform.position, direction, Vector3.Distance(direction, pos)))		
 			this.transform.Translate(new Vector3(x,y,z) *Time.deltaTime);
-        
 	}
 
 	private void doMovementGhost(){
@@ -42,15 +55,30 @@ public class PlayerMovementController : MonoBehaviour {
 		float y = 0.0f;
 		float z = 0.0f;
 		if(Input.GetKey(KeyCode.LeftArrow))
-			x = -this.moveSpeed;
+			x = -this.ghostMoveSpeed;
 		if (Input.GetKey (KeyCode.RightArrow))
-			x = this.moveSpeed;
+			x = this.ghostMoveSpeed;
 		if(Input.GetKey (KeyCode.UpArrow))
-			z = this.moveSpeed;
+			z = this.ghostMoveSpeed;
 		if (Input.GetKey (KeyCode.DownArrow))
-			z = -this.moveSpeed;
 
-
+			z = -this.ghostMoveSpeed;
 		this.transform.Translate(new Vector3(x,y,z) *Time.deltaTime);
+	}
+
+	public void addBodySlow(){
+		if (!isSlow) {
+			bodyMoveSpeed = bodyMoveSpeed * movementLostOnSlow;
+			slowTime = 3f;
+			timer ();
+			isSlow = true;
+		} else {
+			slowTime += 2f;
+		}
+		Debug.Log("slow - " + bodyMoveSpeed + " for " + slowTime);
+	}
+
+	private void timer(){
+		slowTime -= Time.deltaTime;
 	}
 }
