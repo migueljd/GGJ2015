@@ -24,7 +24,7 @@ public class GameControler : MonoBehaviour {
 
 	private void _GameOver(string winnerName){
 
-		Debug.Log(winnerName + " wins"));
+		Debug.Log(winnerName + " wins");
 		//Execute Body victory
 		if(winnerName == "Body"){
 		
