@@ -49,7 +49,11 @@
      <Compile Include="Assets\Scripts\EndgameBody.cs" />
      <Compile Include="Assets\Scripts\EndgameObject.cs" />
      <Compile Include="Assets\Scripts\GameControler.cs" />
+     <Compile Include="Assets\Scripts\LoadOnClick.cs" />
      <Compile Include="Assets\Scripts\MovableObject.cs" />
+ <Reference Include="Assembly-UnityScript-firstpass">
+ <HintPath>C:/Users/Miguel John/Documents/Project 1/GGJ2015/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
