@@ -3,8 +3,11 @@ using System.Collections;
 
 public class TurnBodyLightOn : MonoBehaviour {
 
-	public GameObject bodyLight;
+	private Transform bodyLight;
 	public float lightTimeLeft = 3f;
+	public Transform lightPrefab;
+
+	public Transform lightAudioSource;
 	// Use this for initialization
 	void Start () {
 	
@@ -17,10 +20,15 @@ public class TurnBodyLightOn : MonoBehaviour {
 	void OnTriggerEnter(Collider other){
 		if(other.name == "Body"){
 			Debug.Log ("Here!");
-			bodyLight = Instantiate(Resources.Load("bodyLight", typeof(GameObject))) as GameObject;
-			bodyLight.transform.parent = other.gameObject.transform;
-			bodyLight.transform.position = other.gameObject.transform.position;
+			bodyLight = (Transform) Instantiate(lightPrefab) ;
+			bodyLight.parent = other.gameObject.transform;
+			bodyLight.position = other.gameObject.transform.position + new Vector3(0,2,0);
+			AudioSource audioA = lightAudioSource.GetComponent<AudioSource>();
+			audioA.Play();
 			Destroy (gameObject);
-		}
+            
+        }
 	}
+
+
 }

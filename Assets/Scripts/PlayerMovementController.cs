@@ -4,9 +4,13 @@ using System.Collections;
 public class PlayerMovementController : MonoBehaviour {
 	public float bodyMoveSpeed = 2f;
 	public float ghostMoveSpeed = 2f;
-	public float movementLostOnSlow = 0.5f;
+	public float movementLostOnSlow = 0.7f;
 	float slowTime;
 	bool isSlow;
+
+	public bool canMove = true;
+
+
 	// Use this for initialization
 	void Start () {
 		slowTime = 0;
@@ -16,8 +20,14 @@ public class PlayerMovementController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (this.name == "Ghost")
+//		if(this.canMove == false){
+//			timer();
+//			Debug.Log(slowTime);
+//			if(slowTime <= 0) this.canMove = true;
+//		}
+		if (this.name == "Ghost" /*&& canMove*/){
 			doMovementGhost ();
+		}
 		if (this.name == "Body") {
 			if (isSlow ==true) { 
 				timer();
@@ -26,8 +36,15 @@ public class PlayerMovementController : MonoBehaviour {
 					isSlow = false;
 					Debug.Log ("fast - " + bodyMoveSpeed);
 				}
-			}		
-			doMovementBody (); 
+			}
+			if(GameControler.getInstance().winner != null){ 
+				if(GameControler.getInstance().winner =="Body")
+					doMovementBody (); 
+				else doMovementGhost();
+			}
+			else{
+				doMovementBody (); 
+			}
 		}
 	}
 
@@ -76,7 +93,7 @@ public class PlayerMovementController : MonoBehaviour {
 	public void addBodySlow(){
 		if (!isSlow) {
 			bodyMoveSpeed = bodyMoveSpeed * movementLostOnSlow;
-			slowTime = 3f;
+			slowTime = 2.5f;
 			timer ();
 			isSlow = true;
 		} else {
@@ -84,6 +101,15 @@ public class PlayerMovementController : MonoBehaviour {
 		}
 		Debug.Log("slow - " + bodyMoveSpeed + " for " + slowTime);
 	}
+
+	void OnTriggerEnter(Collider other){
+		if(other.name.Equals("Point light(Clone)") && this.name == "Ghost"){
+			Debug.Log ("Still making false");
+			this.canMove = false;
+			this.slowTime = 1f;
+		}
+	}
+	
 
 	private void timer(){
 		slowTime -= Time.deltaTime;

@@ -6,9 +6,10 @@ public class EndgameGhost : MonoBehaviour {
 	public string bodyName = "Body";
 	
 
-	void OnTriggerEnter(Collider other){
+	void OnTriggerStay(Collider other){
 		if(other.name == bodyName){
-			GameControler.GameOver(this.name);
+			Transform t = other.transform.Find("Point light(Clone)");
+			if(t == null)GameControler.GameOver(this.name);
 		}
 		
 	}

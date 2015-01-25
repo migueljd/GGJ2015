@@ -11,13 +11,14 @@ public class EndgameBody : MonoBehaviour {
 	private int objectsCollected = 0;
 	
 	private GameObject[] spawnersList;
-	private GameObject currentSpawner;
+	private GameObject currentSpawner1;
+	private GameObject currentSpawner2;
 
 	// Use this for initialization
 	void Start () {
 		spawnersList = GameObject.FindGameObjectsWithTag(this.winObjectSpawnerTag);
-		SpawnNewWinObject();
-		Debug.Log (spawnersList.Length);
+		SpawnNewWinObject(true);
+		SpawnNewWinObject(false);
 	}
 	
 	// Update is called once per frame
@@ -26,25 +27,41 @@ public class EndgameBody : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other){
-		if(other.tag == winObjectTag){
+		if(other.tag == winObjectTag && Vector3.Distance(other.transform.position, this.transform.position) <= 1.35f){
+			bool sp = other.transform.position.Equals(currentSpawner1.transform.position);
 			objectsCollected+=1;
 			if(objectsCollected == objectsNeeded){
 				GameControler.GameOver(this.name);
 			}
 			else{
-				Debug.Log ("Spawning new object");
-				SpawnNewWinObject();
+				if(sp)
+				SpawnNewWinObject(true);
+				else SpawnNewWinObject(false);
 			}
 		}
 
 	}
 
-	void SpawnNewWinObject(){
-		GameObject tempSpawner = currentSpawner;
-		do{
-			currentSpawner = spawnersList[Random.Range(0, spawnersList.Length)];
+	void SpawnNewWinObject(bool which){
+		GameObject spawner;
+
+		if(which){
+			spawner = currentSpawner1;
+			do{
+				spawner = spawnersList[Random.Range(0, spawnersList.Length)];
+			}
+			while(spawner != null && (spawner.Equals(currentSpawner1) || spawner.Equals(currentSpawner2)));
+			currentSpawner1 = spawner;
+			Instantiate(winObjectPrefab, currentSpawner1.transform.position, Quaternion.identity);	
 		}
-		while(tempSpawner != null && tempSpawner.Equals(currentSpawner));
-		Instantiate(winObjectPrefab, currentSpawner.transform.position, Quaternion.identity);	
+		else{
+			spawner = currentSpawner2;
+			do{
+				spawner = spawnersList[Random.Range(0, spawnersList.Length)];
+			}
+			while(spawner != null && (spawner.Equals(currentSpawner1) || spawner.Equals(currentSpawner2)));
+			currentSpawner2 = spawner;
+			Instantiate(winObjectPrefab, currentSpawner2.transform.position, Quaternion.identity);	
+        }
 	}
 }

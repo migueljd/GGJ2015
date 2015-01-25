@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class ClickableObject : MonoBehaviour {
@@ -7,33 +7,33 @@ public class ClickableObject : MonoBehaviour {
 
 	public Camera cam;
 
-	public GameObject player;	
+	public Transform bookOfEvil;
 
-	public float playerSpeed;
+	private float nextTimeToShoot = 0f;
+
+	public float shootInterval = 5;
 
 	// Use this for initialization
-	void Start () {
-		
-	}
-	
+
+
 	// Update is called once per frame
 	void Update () {
-
-	}
-
-	void OnMouseDown(){
-		RaycastHit vHit = new RaycastHit();
-		Ray vRay = cam.ScreenPointToRay(Input.mousePosition);
-
-		if(Physics.Raycast(vRay, out vHit, 1000)){
-			if(vHit.collider.gameObject.Equals(this.gameObject)){
-				shootBook ();
+		if(Input.GetMouseButtonDown(0) && Time.time >= this.nextTimeToShoot){
+			RaycastHit vHit = new RaycastHit();
+			Ray vRay = cam.ScreenPointToRay(Input.mousePosition);
+            
+            if(Physics.Raycast(vRay, out vHit, 1000)){
+				if(vHit.collider.gameObject.Equals(this.gameObject)){
+					this.nextTimeToShoot = Time.time + shootInterval;
+                    shootBook ();
+                }
 			}
 		}
 	}
 
-	private void shootBook(){
-		Vector3 playerPos = player.transform.position;
 
+	private void shootBook(){
+		Instantiate(bookOfEvil, this.transform.position + (this.transform.forward)*0.5f, transform.rotation);
+//		tr.forward = this.transform.forward;
 	}
 }
