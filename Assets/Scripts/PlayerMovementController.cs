@@ -44,10 +44,13 @@ public class PlayerMovementController : MonoBehaviour {
 		if (Input.GetKey (KeyCode.S))
 			z = -this.bodyMoveSpeed;
 
-//		Vector3 direction = new Vector3(x,y,z) *Time.deltaTime;
-//		Vector3 pos = this.transform.position;
-//		if(Physics.Raycast(this.transform.position, direction, Vector3.Distance(direction, pos)))		
-			this.transform.Translate(new Vector3(x,y,z) *Time.deltaTime);
+
+
+		Vector3 toLook = new Vector3(x,y,z);
+		this.transform.Translate(toLook *Time.deltaTime, Space.World);
+		if(toLook != Vector3.zero){
+			transform.rotation = Quaternion.LookRotation(toLook);
+		}
 	}
 
 	private void doMovementGhost(){
@@ -63,7 +66,11 @@ public class PlayerMovementController : MonoBehaviour {
 		if (Input.GetKey (KeyCode.DownArrow))
 
 			z = -this.ghostMoveSpeed;
-		this.transform.Translate(new Vector3(x,y,z) *Time.deltaTime);
+		Vector3 toLook = new Vector3(x,y,z);
+		this.transform.Translate(toLook *Time.deltaTime, Space.World);
+		if(toLook != Vector3.zero){
+			transform.rotation = Quaternion.LookRotation(toLook);
+		}
 	}
 
 	public void addBodySlow(){
